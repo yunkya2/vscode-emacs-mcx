@@ -16,8 +16,11 @@ export class PrefixArgumentHandler {
     if (this.isAcceptingPrefixArgument && !isNaN(+text)) {
       // If `text` is a numeric charactor
       this.prefixArgumentStr += text;
-      MessageManager.showMessage(`C-u ${this.prefixArgumentStr}-`);
-
+      if (this.cuCount > 0) {
+        MessageManager.showMessage(`C-u ${this.prefixArgumentStr}-`);
+      } else {
+        MessageManager.showMessage(`M ${this.prefixArgumentStr}-`);
+      }
       logger.debug(`[PrefixArgumentHandler.handleType]\t Prefix argument is "${this.prefixArgumentStr}"`);
       return true;
     }
@@ -39,6 +42,23 @@ export class PrefixArgumentHandler {
       this.isAcceptingPrefixArgument = true;
       this.cuCount++;
       this.prefixArgumentStr = "";
+    }
+  }
+
+  /**
+   * Emacs' M-0 .. M-9
+   */
+  public digitArgument(text: string) {
+    if (this.isInPrefixArgumentMode && this.prefixArgumentStr.length > 0) {
+      logger.debug(`[PrefixArgumentHandler.universalArgument]\t Stop accepting prefix argument.`);
+      this.isAcceptingPrefixArgument = false;
+    } else {
+      logger.debug(`[PrefixArgumentHandler.universalArgument]\t Start prefix argument or count up C-u.`);
+      this.isInPrefixArgumentMode = true;
+      this.isAcceptingPrefixArgument = true;
+      this.cuCount = 0;
+      this.prefixArgumentStr = text;
+      MessageManager.showMessage(`M ${this.prefixArgumentStr}-`);
     }
   }
 

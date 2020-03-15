@@ -169,6 +169,10 @@ export class EmacsEmulator implements Disposable, IEmacsCommandRunner, IMarkMode
     this.prefixArgumentHandler.universalArgument();
   }
 
+  public digitArgument(text: string) {
+    this.prefixArgumentHandler.digitArgument(text);
+  }
+
   public runCommand(commandName: string) {
     const command = this.commandRegistry.get(commandName);
 

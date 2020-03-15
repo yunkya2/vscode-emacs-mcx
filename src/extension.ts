@@ -108,6 +108,10 @@ export function activate(context: vscode.ExtensionContext) {
     emulator.universalArgument();
   });
 
+  registerEmulatorCommand("emacs-mcx.digitArgument", (emulator, args) => {
+    emulator.digitArgument(args);
+  });
+
   registerEmulatorCommand("emacs-mcx.killLine", emulator => {
     emulator.runCommand("killLine");
   });
