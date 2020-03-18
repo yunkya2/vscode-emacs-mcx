@@ -1127,6 +1127,66 @@
 					"emacs-mcx.forwardChar",
 					"emacs-mcx.nextLine"
 				]
+			},
+			{
+				"key": "escape 0",
+				"command": "emacs-mcx.digitArgument",
+				"when": "editorFocus",
+				"args": ["0"]
+			},
+			{
+				"key": "escape 1",
+				"command": "emacs-mcx.digitArgument",
+				"when": "editorFocus",
+				"args": ["1"]
+			},
+			{
+				"key": "escape 2",
+				"command": "emacs-mcx.digitArgument",
+				"when": "editorFocus",
+				"args": ["2"]
+			},
+			{
+				"key": "escape 3",
+				"command": "emacs-mcx.digitArgument",
+				"when": "editorFocus",
+				"args": ["3"]
+			},
+			{
+				"key": "escape 4",
+				"command": "emacs-mcx.digitArgument",
+				"when": "editorFocus",
+				"args": ["4"]
+			},
+			{
+				"key": "escape 5",
+				"command": "emacs-mcx.digitArgument",
+				"when": "editorFocus",
+				"args": ["5"]
+			},
+			{
+				"key": "escape 6",
+				"command": "emacs-mcx.digitArgument",
+				"when": "editorFocus",
+				"args": ["6"]
+			},
+			{
+				"key": "escape 7",
+				"command": "emacs-mcx.digitArgument",
+				"when": "editorFocus",
+				"args": ["7"]
+			},
+			{
+				"key": "escape 8",
+				"command": "emacs-mcx.digitArgument",
+				"when": "editorFocus",
+				"args": ["8"]
+			},
+			{
+				"key": "escape 9",
+				"command": "emacs-mcx.digitArgument",
+				"when": "editorFocus",
+				"args": ["9"]
 			}
 		]
 	},
